@@ -12,18 +12,22 @@ public class Ejercicio7 {
 
 		// variables
 		Scanner scan = new Scanner (System.in);
-		int num=0, numAleatorio, mayor, menor;
+		int num=0, numAleatorio;
 		
 		//while
 		
 		System.out.println("Adivina el número aleatorio del 1 al 100");
+		numAleatorio = (int) ((Math.random() * (101 - 1)) + 1);
 		
-		while (num>=0) {
-			numAleatorio = (int) ((Math.random() * (101 - 1)) + 1);
-			System.out.println("Introduce un número que creas que sea mayor que el número aleatorio: ");
-			mayor = scan.nextInt();
-			System.out.println("Introduce un número que creas que sea menor que el número aleatorio: ");
-			menor = scan.nextInt();
+		while (num>=0 || num == numAleatorio) {
+			System.out.println("Introduce un número que creas que pueda ser el número aleatorio: (-1 para rendirte)");
+			num = scan.nextInt();
+			if (num > numAleatorio) {
+				System.out.println("El número aleatorio es menor que tu número");
+			}
+			else if (num < numAleatorio) {
+				System.out.println("El número aleatorio es mayor que tu número");
+			}
 		}
 		
 		if (num==-1) {
