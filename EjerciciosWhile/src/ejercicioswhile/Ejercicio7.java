@@ -1,5 +1,7 @@
 package ejercicioswhile;
 
+import java.util.Scanner;
+
 public class Ejercicio7 {
 
 	public static void main(String[] args) {
@@ -8,6 +10,29 @@ public class Ejercicio7 {
 		 * con respecto al número secreto. El proceso termina cuando el usuario acierta o cuando se rinde (introduciendo un -1).
 		 */
 
+		// variables
+		Scanner scan = new Scanner (System.in);
+		int num=0, numAleatorio, mayor, menor;
+		
+		//while
+		
+		System.out.println("Adivina el número aleatorio del 1 al 100");
+		
+		while (num>=0) {
+			numAleatorio = (int) ((Math.random() * (101 - 1)) + 1);
+			System.out.println("Introduce un número que creas que sea mayor que el número aleatorio: ");
+			mayor = scan.nextInt();
+			System.out.println("Introduce un número que creas que sea menor que el número aleatorio: ");
+			menor = scan.nextInt();
+		}
+		
+		if (num==-1) {
+			System.out.println("Te has rendido");
+		}
+		else {
+			System.out.println("Has acertado!!");
+		}
+		
 
 	}
 
